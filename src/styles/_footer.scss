@@ -1,0 +1,82 @@
+.footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 0;
+  color: $footerColor;
+  &__line {
+    border-top: 1px solid $footerColor;
+  }
+  .wrapper {
+    margin-bottom: -10px;
+    padding-top: 10px;
+  }
+  .footer__logoAndSocial {
+    justify-content: space-between;
+  }
+  &__logo__img {
+    max-width: 225px;
+  }
+  &__social__link {
+    display: inline-block;
+    padding: 10px 15px;
+    &:hover {
+      .footer__social__redimg {
+        opacity: 1;
+      }
+    }
+  }
+  &__social__img {
+    filter: brightness(35%);
+  }
+  &__social__redimg {
+    // display: none;
+    background-color: $black;
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    opacity: 0;
+  }
+  &__social__item:last-of-type {
+    .footer__social__link {
+      padding-right: 0;
+    }
+  }
+  .nav {
+    font-family: $sofiaproMedium;
+    &__list {
+      justify-content: space-between;
+    }
+  }
+  &__enquiries__item {
+    width: 26.5%;
+  }
+  &__secondary__item {
+    width: 20%;
+  }
+  .nav__item,
+  &__enquiries__item,
+  &__secondary__item {
+    margin-top: 40px;
+  }
+  &__enquiries__heading {
+    font-family: $sofiaproBold;
+    font-size: 20px;
+  }
+  &__secondary__link {
+    font-size: 13px;
+    font-family: $sofiaproMedium;
+  }
+  .nav__link,
+  &__enquiries__link,
+  &__secondary__link {
+    display: inline-block;
+    padding: 10px 0;
+    transition: color 0.3s;
+    &:hover:not([href*="javascript"]) {
+      color: $red;
+    }
+  }
+  &__enquiries__link {
+    padding-top: 0;
+  }
+}

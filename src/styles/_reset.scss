@@ -1,0 +1,138 @@
+@font-face {
+  font-family: sofiaprosemibold;
+  src: url(../fonts/sofiapro-semibold.woff2);
+  font-display: swap;
+}
+@font-face {
+  font-family: sofiaproregular;
+  src: url(../fonts/sofiapro-regular.woff2);
+  font-display: swap;
+}
+@font-face {
+  font-family: sofiaproblack;
+  src: url(../fonts/sofiapro-black.woff2);
+  font-display: swap;
+}
+@font-face {
+  font-family: sofiaprolightitalic;
+  src: url(../fonts/sofiapro-lightitalic.woff2);
+  font-display: swap;
+}
+@font-face {
+  font-family: sofiaprobold;
+  src: url(../fonts/sofiapro-bold.woff2);
+  font-display: swap;
+}
+@font-face {
+  font-family: sofiapromedium;
+  src: url(../fonts/sofiapro-medium.woff2);
+  font-display: swap;
+}
+@font-face {
+  font-family: sofiaprolight;
+  src: url(../fonts/sofiapro-light.woff2);
+  font-display: swap;
+}
+html {
+  scroll-behavior: smooth;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-text-size-adjust: none;
+  outline: none;
+  border-radius: 0;
+  -webkit-font-smoothing: antialiased;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+.loading * {
+  transition: none !important;
+}
+body {
+  font-size: 18px;
+  font-family: $lato;
+  line-height: 1.5;
+  color: $white;
+  letter-spacing: 0.3px;
+}
+.whiteBg {
+  color: $black;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $sofiaproSemibold;
+  margin-bottom: 8px;
+}
+h3 {
+  font-size: 35px;
+}
+h4 {
+  font-size: 25px;
+}
+p {
+  margin-bottom: 15px;
+  font-family: inherit;
+}
+a {
+  color: inherit;
+  font-family: inherit;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+.slider_initialize {
+  visibility: hidden;
+} /*Slider Initialized*/
+.slider_initialize.swiper-container-initialized {
+  visibility: visible;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input,
+select,
+textarea {
+  color: $lightColor;
+  background: transparent;
+  height: 60px;
+  border: 0;
+  border-bottom: 1px solid #aaaaaa;
+  font-size: 18px;
+  font-family: $lato;
+  margin-top: 25px;
+  padding-left: 15px;
+}
+::placeholder {
+  color: $lightColor;
+}
+button {
+  background: transparent;
+  border: 0;
+  color: $white;
+}
