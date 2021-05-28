@@ -202,14 +202,14 @@ export default function Home() {
         </section>
         <section className="aboutUsBanner blackBg">
           <div className="paddingTopBottom">
-            <Link to="#!">
+            <Link to="/AboutUs">
               <div className="aboutUsBanner__box parallax showDiv" style={{backgroundImage: "url("+"/images/about.jpg"+")"}}>
                 <div className="overlay overlay--left">
                   <div className="wrapper wrapper--small d-flex">
                     <div className="mobSelfEnd">
                       <h2 className="aboutUsBanner__h2 title">ABOUT US</h2>
                       <p>While others do a good job of catering to the mainstream audience, opportunities for Jungo TV came to follow what we believe and what we are good at</p>
-                      <span href="#!" className="cta cta--underline cta--arrow">Learn More</span>
+                      <span className="cta cta--underline cta--arrow">Learn More</span>
                     </div>
                   </div>
                 </div>

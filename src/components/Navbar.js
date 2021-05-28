@@ -16,19 +16,19 @@ export default function Navbar() {
                     </Link>
                     <ul className="nav__list d-flex">
                         <li className="nav__item">
-                            <Link to="<?=$baseurl?>about-us" className="nav__link">ABOUT US</Link>
+                            <Link to="/AboutUs" className="nav__link">ABOUT US</Link>
                         </li>
                         <li className="nav__item">
-                            <Link to="<?=$baseurl?>our-offerings" className="nav__link">OUR OFFERINGS</Link>
+                            <Link to="/" className="nav__link">OUR OFFERINGS</Link>
                         </li>
                         <li className="nav__item">
-                            <Link to="<?=$baseurl?>newsroom" className="nav__link">NEWSROOM</Link>
+                            <Link to="/" className="nav__link">NEWSROOM</Link>
                         </li>
                         <li className="nav__item">
-                            <Link to="<?=$baseurl?>advertise-with-us" className="nav__link nav--btn">ADVERTISE WITH US</Link>
+                            <Link to="/" className="nav__link nav--btn">ADVERTISE WITH US</Link>
                         </li>
                         <li className="nav__item">
-                            <Link to="<?=$baseurl?>watch" className="nav__link nav--btn last--right">WATCH</Link>
+                            <Link to="/" className="nav__link nav--btn last--right">WATCH</Link>
                         </li>
                     </ul>
                 </nav>
