@@ -1,10 +1,15 @@
 import React from 'react'
+import { Helmet } from "react-helmet"
 import { Link } from "gatsby"
 import Layout from '../components/Layout'
 
 export default function AboutUs() {
     return (
         <Layout>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>About Us | Jungo Tv</title>
+            </Helmet>
             <section className="pageCover blackBg">
                 <div className="pageCover__box lazyBg">
                     <div className="overlay overlay--20"></div>

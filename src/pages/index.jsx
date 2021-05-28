@@ -1,5 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
+import { Helmet } from "react-helmet"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Navigation} from 'swiper/core';
 // Import Swiper styles
@@ -11,6 +12,10 @@ SwiperCore.use([Autoplay, Navigation]);
 export default function Home() {
   return (
     <Layout>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Home | Jungo Tv</title>
+      </Helmet>
       <div className="homePage loading">
         <section className="hero blackBg">
           <div className="hero__box">
