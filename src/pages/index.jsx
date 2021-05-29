@@ -298,56 +298,56 @@ export default function Home() {
                   <Swiper slidesPerView={3} navigation>
                       <SwiperSlide>
                         <div className="news__box showDiv showDivRight">
-                          <Link to="news-inner">
+                          <Link to="/Newslisting">
                             <img src="/images/news/1.jpg" alt="Jungo TV News" className="news__img" />
                             <div className="news__date">04 MARCH 2021</div>
                             <div className="news__topic">SOCIAL IMPACT</div>
                             <h4 className="news__h4">Investing in the Next Generation of Women Storytellers</h4>
-                            <div className="showDiv"><span href="news-inner" className="cta cta--underline cta--arrow">Read More</span></div>
+                            <div className="showDiv"><span className="cta cta--underline cta--arrow">Read More</span></div>
                           </Link>
                         </div>
                       </SwiperSlide>
                       <SwiperSlide>
                         <div className="news__box showDiv showDivRight">
-                          <Link to="news-inner">
+                          <Link to="/Newslisting">
                             <img src="/images/news/2.jpg" alt="Jungo TV News" className="news__img" />
                             <div className="news__date">04 MARCH 2021</div>
                             <div className="news__topic">INNOVATION</div>
                             <h4 className="news__h4">How Many Stories Are Left Untold, Every Day?</h4>
-                            <div className="showDiv"><span href="news-inner" className="cta cta--underline cta--arrow">Read More</span></div>
+                            <div className="showDiv"><span className="cta cta--underline cta--arrow">Read More</span></div>
                           </Link>
                         </div>
                       </SwiperSlide>
                       <SwiperSlide>
                         <div className="news__box showDiv showDivRight">
-                          <Link to="news-inner">
+                          <Link to="/Newslisting">
                             <img src="/images/news/3.jpg" alt="Jungo TV News" className="news__img" />
                             <div className="news__date">04 MARCH 2021</div>
                             <div className="news__topic">ENTERTAINMENT</div>
                             <h4 className="news__h4">Investing in the Next Generation of Women Storytellers</h4>
-                            <div className="showDiv"><span href="news-inner" className="cta cta--underline cta--arrow">Read More</span></div>
+                            <div className="showDiv"><span className="cta cta--underline cta--arrow">Read More</span></div>
                           </Link>
                         </div>
                       </SwiperSlide>
                       <SwiperSlide>
                         <div className="news__box showDiv showDivRight">
-                          <Link to="news-inner">
+                          <Link to="/Newslisting">
                             <img src="/images/news/1.jpg" alt="Jungo TV News" className="news__img" />
                             <div className="news__date">04 MARCH 2021</div>
                             <div className="news__topic">SOCIAL IMPACT</div>
                             <h4 className="news__h4">Investing in the Next Generation of Women Storytellers</h4>
-                            <div className="showDiv"><span href="news-inner" className="cta cta--underline cta--arrow">Read More</span></div>
+                            <div className="showDiv"><span className="cta cta--underline cta--arrow">Read More</span></div>
                           </Link>
                         </div>
                       </SwiperSlide>
                       <SwiperSlide>
                         <div className="news__box showDiv showDivRight">
-                          <Link to="news-inner">
+                          <Link to="/Newslisting">
                             <img src="/images/news/2.jpg" alt="Jungo TV News" className="news__img" />
                             <div className="news__date">04 MARCH 2021</div>
                             <div className="news__topic">SOCIAL IMPACT</div>
                             <h4 className="news__h4">Investing in the Next Generation of Women Storytellers</h4>
-                            <div className="showDiv"><span href="news-inner" className="cta cta--underline cta--arrow">Read More</span></div>
+                            <div className="showDiv"><span className="cta cta--underline cta--arrow">Read More</span></div>
                           </Link>
                         </div>
                       </SwiperSlide>

@@ -1,0 +1,36 @@
+.newsInner {
+  h2,
+  h3,
+  h4 {
+    max-width: 732px;
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+  }
+  p {
+    max-width: 790px;
+    margin-bottom: 35px;
+    font-family: $sofiaproRegular;
+  }
+  &__h3 {
+    margin-top: 5px;
+    margin-bottom: 32px;
+    font-family: $sofiaproBold;
+  }
+  .news__date {
+    padding-top: 0;
+  }
+  .row {
+    margin-left: -30px;
+    margin-right: -30px;
+    img {
+      padding-bottom: 0;
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+  &__img {
+    padding-top: 15px;
+    padding-bottom: 50px;
+    width: 100%;
+  }
+}

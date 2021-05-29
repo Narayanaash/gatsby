@@ -37,13 +37,13 @@ export default function Footer() {
                                     <Link to="/AboutUs" className="nav__link">ABOUT US</Link>
                                 </li>
                                 <li className="nav__item showDiv">
-                                    <Link to="/" className="nav__link">OUR OFFERINGS</Link>
+                                    <Link to="/Ourofferings" className="nav__link">OUR OFFERINGS</Link>
                                 </li>
                                 <li className="nav__item showDiv">
-                                    <Link to="/" className="nav__link">NEWSROOM</Link>
+                                    <Link to="/Newsroom" className="nav__link">NEWSROOM</Link>
                                 </li>
                                 <li className="nav__item showDiv">
-                                    <Link to="/" className="nav__link nav--btn">ADVERTISE WITH US</Link>
+                                    <Link to="/Advertisewithus" className="nav__link nav--btn">ADVERTISE WITH US</Link>
                                 </li>
                                 <li className="nav__item showDiv">
                                     <Link to="/" className="nav__link nav--btn">WATCH</Link>

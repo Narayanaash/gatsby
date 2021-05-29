@@ -1,0 +1,60 @@
+.aboutAdvertise {
+  p {
+    margin-bottom: 35px;
+    max-width: 765px;
+  }
+  &__img {
+    padding-top: 8px;
+    width: 100%;
+  }
+}
+.ourOfferings {
+  font-size: 25px;
+  line-height: 1.35;
+  &__list {
+    margin-left: -105px;
+    margin-bottom: -20px;
+  }
+  &__item {
+    position: relative;
+    flex: 0 0 33.33%;
+    min-height: 100px;
+    padding-left: 130px;
+    &:before {
+      content: "";
+      width: 13px;
+      height: 13px;
+      position: absolute;
+      top: 12px;
+      left: 100px;
+      border: 1px solid $red;
+      border-top: 0;
+      border-left: 0;
+      transform: rotate(-45deg);
+    }
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        transition-delay: #{$i * 0.05}s;
+      }
+    }
+  }
+}
+.enquireNow {
+  &__box {
+    border: 1px solid #999999;
+    padding: 52px 55px;
+  }
+  &__form {
+    input {
+      width: 100%;
+    }
+    .row {
+      margin-left: -30px;
+      margin-right: -30px;
+    }
+    .input-group {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+  }
+}

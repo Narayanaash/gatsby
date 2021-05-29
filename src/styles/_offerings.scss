@@ -1,0 +1,67 @@
+body.ourOfferingsPage {
+  .news .swiper-slide {
+    margin-right: 15px;
+  }
+}
+
+.counters {
+  &__item {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  &__number {
+    font-size: 60px;
+    font-family: $sofiaproBold;
+    color: $red;
+    padding-bottom: 15px;
+    line-height: 1;
+  }
+}
+
+.offeringslisting {
+  .row {
+    margin-left: -45px;
+    margin-right: -45px;
+  }
+  &__box {
+    margin-left: 45px;
+    margin-right: 45px;
+    padding-top: calc(100% - 90px);
+    margin-bottom: 60px;
+    cursor: pointer;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        to top,
+        rgba($black, 1),
+        rgba($black, 0.45),
+        transparent
+      );
+    }
+    &:hover {
+      .cta {
+        opacity: 1;
+      }
+    }
+  }
+  &__icon {
+    padding-bottom: 10px;
+  }
+  &__text {
+    top: auto;
+    bottom: 30px;
+    padding: 0 35px;
+    z-index: 1;
+    p {
+      font-family: $sofiaproRegular;
+    }
+  }
+  .cta {
+    opacity: 0;
+  }
+}
