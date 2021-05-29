@@ -7,10 +7,6 @@ import SwiperCore, { Autoplay, Navigation} from "swiper/core"
 import "swiper/swiper.scss"
 import Layout from "../components/Layout"
 
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
-import { convertToBgImage } from "gbimage-bridge"
-import BackgroundImage from 'gatsby-background-image'
-
 SwiperCore.use([Autoplay, Navigation]);
 
 export default function Home({ data }) {
