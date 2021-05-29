@@ -1,13 +1,25 @@
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
+import Img from "gatsby-image"
 import React from 'react'
 
-export default function Navbar() {
+const Navbar = () => {
+    const data = useStaticQuery(graphql`
+        query Logo {
+            file(relativePath: {eq: "logo.png"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500,quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+        }
+    `)
     return (
         <header className="header transition">
             <div className="wrapper wrapper--large d-flex">
                 <div className="header__logo">
                     <Link to="/" className="header__logo__link">
-                        <img className="header__logo__img" src="/images/logo.png" alt="Jungo TV" title="Jungo TV" />
+                        <Img className="header__logo__img" fluid={data.file.childImageSharp.fluid} alt="Jungo TV" title="Jungo TV" />
                     </Link>
                 </div>
                 <nav className="nav">
@@ -43,3 +55,6 @@ export default function Navbar() {
         </header>
     )
 }
+
+export default Navbar
+

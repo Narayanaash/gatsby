@@ -1,13 +1,27 @@
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
+import Img from "gatsby-image"
 import React from 'react'
 
-export default function Footer() {
+const Footer = () => {
+    const data = useStaticQuery(graphql`
+        query Footerlogo {
+            file(relativePath: {eq: "logo.png"}) {
+                childImageSharp {
+                    fluid(maxWidth: 500,quality: 100) {
+                        ...GatsbyImageSharpFluid_withWebp
+                    }
+                }
+            }
+        }
+    `)
     return (
         <footer className="footer blackBg paddingTopBottom">
             <div className="paddingTop footer__line">
                 <div className="wrapper wrapper--small">
                     <div className="footer__logoAndSocial d-flex">
-                        <Link to="/" className="footer__logo"><img className="footer__logo__img showDiv" src="/images/logo.png" alt="Jungo TV" title="Jungo TV" /></Link>
+                        <Link to="/" className="footer__logo">
+                            <Img className="footer__logo__img showDiv" fluid={data.file.childImageSharp.fluid} alt="Jungo TV" title="Jungo TV" />
+                            </Link>
                         <div className="footer__social">
                             <ul className="footer__social__list d-flex">
                                 <li className="footer__social__item showDiv">
@@ -84,3 +98,5 @@ export default function Footer() {
         </footer>
     )
 }
+
+export default Footer

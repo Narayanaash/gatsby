@@ -1,15 +1,19 @@
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 import React from "react"
 import { Helmet } from "react-helmet"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Autoplay, Navigation} from 'swiper/core';
-// Import Swiper styles
-import 'swiper/swiper.scss';
-import Layout from '../components/Layout'
+import { Swiper, SwiperSlide } from "swiper/react"
+import Img from "gatsby-image"
+import SwiperCore, { Autoplay, Navigation} from "swiper/core"
+import "swiper/swiper.scss"
+import Layout from "../components/Layout"
+
+import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { convertToBgImage } from "gbimage-bridge"
+import BackgroundImage from 'gatsby-background-image'
 
 SwiperCore.use([Autoplay, Navigation]);
 
-export default function Home() {
+export default function Home({ data }) {
   return (
     <Layout>
       <Helmet>
@@ -20,7 +24,7 @@ export default function Home() {
         <section className="hero blackBg">
           <div className="hero__box">
             <div className="overlay"></div>
-            <img src="/images/hero.jpg" alt="Jungo TV" className="hero__img" />
+            <Img fluid={data.hero.childImageSharp.fluid} alt="Jungo TV" />
             <div className="wrapper wrapper--small">
               <h1 className="absolute absolute__center"><span className="showDiv delay0-5">WE DELIVER YOUR PASSION</span></h1>
             </div>
@@ -100,106 +104,34 @@ export default function Home() {
             <div className="latest__sliders wrapper wrapper--fluid">
               <div className="swiper--top showDiv">
                 <Swiper slidesPerView={3.5} centeredSlides={true} autoplay navigation loop={true}>
-                  <SwiperSlide>
-                    <Link to="#!">
-                      <div className="overlay">
-                        <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
+                  {data.latest.nodes.map(image => (
+                    <SwiperSlide key={image.id}>
+                      <Link to="#!">
+                        <div className="overlay">
+                          <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
+                        </div>
+                      </Link>
+                      <div className="latest__box">
+                        <Img fluid={image.childImageSharp.fluid} />
                       </div>
-                    </Link>
-                    <div className="latest__box" style={{backgroundImage: "url("+"/images/latest/latest1.png"+")"}}></div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Link to="#!">
-                      <div className="overlay">
-                        <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
-                      </div>
-                    </Link>
-                    <div className="latest__box" style={{backgroundImage: "url("+"/images/latest/latest2.png"+")"}}></div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Link to="#!">
-                      <div className="overlay">
-                        <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
-                      </div>
-                    </Link>
-                    <div className="latest__box" style={{backgroundImage: "url("+"/images/latest/latest3.png"+")"}}></div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Link to="#!">
-                      <div className="overlay">
-                        <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
-                      </div>
-                    </Link>
-                    <div className="latest__box" style={{backgroundImage: "url("+"/images/latest/latest4.png"+")"}}></div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Link to="#!">
-                      <div className="overlay">
-                        <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
-                      </div>
-                    </Link>
-                    <div className="latest__box" style={{backgroundImage: "url("+"/images/latest/latest5.png"+")"}}></div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Link to="#!">
-                      <div className="overlay">
-                        <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
-                      </div>
-                    </Link>
-                    <div className="latest__box" style={{backgroundImage: "url("+"/images/latest/latest3.png"+")"}}></div>
-                  </SwiperSlide>
+                    </SwiperSlide>
+                  ))}
                 </Swiper>
               </div>
               <div className="swiper--bottom showDiv">
                 <Swiper slidesPerView={3.5} centeredSlides={true} autoplay navigation loop={true}>
-                  <SwiperSlide>
-                    <Link to="#!">
-                      <div className="overlay">
-                        <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
+                  {data.latest.nodes.reverse().map(image => (
+                    <SwiperSlide key={image.id}>
+                      <Link to="#!">
+                        <div className="overlay">
+                          <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
+                        </div>
+                      </Link>
+                      <div className="latest__box">
+                        <Img fluid={image.childImageSharp.fluid} />
                       </div>
-                    </Link>
-                    <div className="latest__box" style={{backgroundImage: "url("+"/images/latest/latest3.png"+")"}}></div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Link to="#!">
-                      <div className="overlay">
-                        <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
-                      </div>
-                    </Link>
-                    <div className="latest__box" style={{backgroundImage: "url("+"/images/latest/latest6.png"+")"}}></div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Link to="#!">
-                      <div className="overlay">
-                        <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
-                      </div>
-                    </Link>
-                    <div className="latest__box" style={{backgroundImage: "url("+"/images/latest/latest7.png"+")"}}></div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Link to="#!">
-                      <div className="overlay">
-                        <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
-                      </div>
-                    </Link>
-                    <div className="latest__box" style={{backgroundImage: "url("+"/images/latest/latest8.png"+")"}}></div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Link to="#!">
-                      <div className="overlay">
-                        <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
-                      </div>
-                    </Link>
-                    <div className="latest__box" style={{backgroundImage: "url("+"/images/latest/latest9.png"+")"}}></div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Link to="#!">
-                      <div className="overlay">
-                        <div className="d-flex">WATCH NOW<span className="playIcon"></span></div>
-                      </div>
-                    </Link>
-                    <div className="latest__box" style={{backgroundImage: "url("+"/images/latest/latest10.png"+")"}}></div>
-                  </SwiperSlide>
+                    </SwiperSlide>
+                  ))}
                 </Swiper>
               </div>
             </div>
@@ -376,3 +308,26 @@ export default function Home() {
     </Layout>
   )
 }
+
+export const query = graphql`
+query Images {
+  hero: file(relativePath: {eq: "hero.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 2000,quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+
+  latest: allFile(filter: {relativeDirectory: {eq: "latest"}}) {
+    nodes {
+      id
+      childImageSharp {
+        fluid(maxWidth: 2000, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+}
+`
