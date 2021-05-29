@@ -356,7 +356,7 @@ export default function Home() {
                 <div className="swiper-button-next" data-async="assets/img/icons/next-red.png"></div>
                 <div className="swiper-button-prev"></div>
               </div>
-              <Link to="news-listing" className="btn btn--red showDivRight">VIEW ALL</Link>
+              <Link to="/Newslisting" className="btn btn--red showDivRight">VIEW ALL</Link>
             </div>
           </div>
         </section>
