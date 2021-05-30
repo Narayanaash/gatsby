@@ -274,7 +274,7 @@ query aboutcover {
 
   aboutcover: file(relativePath: {eq: "aboutcover.jpg"}) {
     childImageSharp {
-      fluid(maxWidth: 2000,quality: 100) {
+      fluid(maxWidth: 2000,quality: 90) {
         ...GatsbyImageSharpFluid_withWebp
       }
     }

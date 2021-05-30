@@ -1,10 +1,11 @@
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 import React from "react"
 import { Helmet } from "react-helmet"
 import Layout from '../components/Layout'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-export default function Ourofferings() {
+export default function Ourofferings({ data }) {
   return (
     <Layout>
         <Helmet>
@@ -14,7 +15,7 @@ export default function Ourofferings() {
         <section className="pageCover blackBg">
             <div className="pageCover__box lazyBg">
                 <div className="overlay overlay--20"></div>
-                <img src="/images/about/cover.jpg" alt="Jungo TV" className="pageCover__img" />
+                <Img fluid={data.offerngcover.childImageSharp.fluid} alt="Jungo TV" className="pageCover__img" />
                 <div className="wrapper wrapper--large">
                     <div className="breadcrumb breadcrumbTopPadding">
                         <ul className="breadcrumb__list d-flex">
@@ -187,3 +188,17 @@ export default function Ourofferings() {
     </Layout>
   )
 }
+
+export const query = graphql`
+query offeringcover {
+
+  offerngcover: file(relativePath: {eq: "aboutcover.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 2000,quality: 100) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+
+}
+`
