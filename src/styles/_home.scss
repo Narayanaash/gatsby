@@ -270,7 +270,11 @@ body.homePage {
     font-family: $sofiaproRegular;
   }
   &__mockup {
+    max-width: 1195px;
     margin: auto;
+    img {
+      object-fit: contain !important;
+    }
   }
   .wrapper {
     &--fluid {
