@@ -3,11 +3,11 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { Swiper, SwiperSlide } from "swiper/react"
 import Img from "gatsby-image"
-import SwiperCore, { Autoplay, Navigation} from "swiper/core"
-import "swiper/swiper.scss"
+import SwiperCore, { Autoplay, Navigation } from "swiper"
+import "swiper/swiper-bundle.css"
 import Layout from "../components/Layout"
 
-SwiperCore.use([Autoplay, Navigation]);
+SwiperCore.use([ Navigation, Autoplay ])
 
 export default function Home({ data }) {
   // console.log(data);
@@ -100,7 +100,7 @@ export default function Home({ data }) {
             </div>
             <div className="latest__sliders wrapper wrapper--fluid">
               <div className="swiper--top showDiv">
-                <Swiper slidesPerView={3.5} centeredSlides={true} autoplay navigation loop={true}>
+                <Swiper slidesPerView={3.5} centeredSlides={true} loop={true}>
                   {data.latest.nodes.map(image => (
                     <SwiperSlide key={image.id}>
                       <Link to="#!">
@@ -116,7 +116,7 @@ export default function Home({ data }) {
                 </Swiper>
               </div>
               <div className="swiper--bottom showDiv">
-                <Swiper slidesPerView={3.5} centeredSlides={true} autoplay navigation loop={true}>
+                <Swiper slidesPerView={3.5} centeredSlides={true} loop={true}>
                   {data.latest.nodes.reverse().map(image => (
                     <SwiperSlide key={image.id}>
                       <Link to="#!">
@@ -196,7 +196,7 @@ export default function Home({ data }) {
               <h2 className="offerings__h2 title showDiv">NEWS</h2>
               <div className="news__slider paddingTop paddingTop--50">
                 <div className="swiper--news">
-                  <Swiper slidesPerView={3} navigation>
+                  <Swiper slidesPerView={3} navigation autoplay={true} speed={100}>
                       <SwiperSlide>
                         <div className="news__box showDiv showDivRight">
                           <Link to="/Newslisting">
@@ -254,8 +254,6 @@ export default function Home({ data }) {
                       </SwiperSlide>
                   </Swiper>
                 </div>
-                <div className="swiper-button-next" data-async="assets/img/icons/next-red.png"></div>
-                <div className="swiper-button-prev"></div>
               </div>
               <Link to="/Newslisting" className="btn btn--red showDivRight">VIEW ALL</Link>
             </div>

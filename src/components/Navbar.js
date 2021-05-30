@@ -2,8 +2,8 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from "gatsby-image"
 import React, { useState} from 'react'
 
-const Navbar = (props) => {
-    
+const Navbar = () => {
+    const [nav, showNav] = useState(false)
     const data = useStaticQuery(graphql`
         query Logo {
             file(relativePath: {eq: "logo.png"}) {
@@ -15,7 +15,6 @@ const Navbar = (props) => {
             }
         }
     `)
-    const { nav, showNav } = props
     return (
         <header className={`header transition ${nav ? 'open' : ''}`}>
             <div className="wrapper wrapper--large d-flex">
