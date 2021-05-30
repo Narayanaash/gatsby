@@ -1,8 +1,9 @@
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Img from "gatsby-image"
-import React from 'react'
+import React, { useState} from 'react'
 
-const Navbar = () => {
+const Navbar = (props) => {
+    
     const data = useStaticQuery(graphql`
         query Logo {
             file(relativePath: {eq: "logo.png"}) {
@@ -14,8 +15,9 @@ const Navbar = () => {
             }
         }
     `)
+    const { nav, showNav } = props
     return (
-        <header className="header transition">
+        <header className={`header transition ${nav ? 'open' : ''}`}>
             <div className="wrapper wrapper--large d-flex">
                 <div className="header__logo">
                     <Link to="/" className="header__logo__link">
@@ -44,9 +46,9 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </nav>
-                <div className="overlay mobile"></div>
+                <div onClick={() => showNav(false)} className="overlay mobile"></div>
                 <label id="hamMenu" className="mobile" htmlFor="ham">
-                    <input type="checkbox" id="ham"/> 
+                    <input onClick={() => showNav(!nav)} type="checkbox" checked={nav} id="ham"/> 
                     <span></span>
                     <span></span>
                     <span></span>
