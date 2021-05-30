@@ -218,7 +218,7 @@ export default function AboutUs() {
                 </div>
             </section>
             <section className="ourPartners blackBg">
-                <div className="paddingTopBottom">
+                <div className="paddingTop">
                     <div className="wrapper wrapper--small">
                         <h2 className="ourPartners__h2 title showDiv">OUR PARTNERS</h2>
                         <ul className="ourPartners__list d-flex paddingTop--50">
