@@ -15,7 +15,7 @@ const Footer = () => {
         }
     `)
     return (
-        <footer className="footer blackBg paddingTopBottom">
+        <footer className="footer blackBg paddingBottom">
             <div className="paddingTop footer__line">
                 <div className="wrapper wrapper--small">
                     <div className="footer__logoAndSocial d-flex">

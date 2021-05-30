@@ -288,6 +288,12 @@ body.homePage {
     &:hover {
       transform: scale(1.08);
     }
+    > div {
+      display: none;
+    }
+    [loading="lazy"] {
+      position: unset !important;
+    }
   }
 }
 

@@ -10,6 +10,7 @@ import Layout from "../components/Layout"
 SwiperCore.use([Autoplay, Navigation]);
 
 export default function Home({ data }) {
+  // console.log(data);
   return (
     <Layout>
       <Helmet>
@@ -155,44 +156,16 @@ export default function Home({ data }) {
             <div className="wrapper wrapper--fluid text-center">
               <h2 className="watchAnywhere__h2 title showDiv">WATCH ANYWHERE. EVERYWHERE.</h2>
               <p className="showDiv">Jungo TV is the market leader in passion-centric programming, reaching over 2 billion views monthly and entertaining audiences globally across all devices</p>
-              <img src="/images/mockup.jpg" alt="" className="watchAnywhere__mockup paddingTopBottom showDiv" />
+              <Img fluid={data.mockup.childImageSharp.fluid} alt="" className="watchAnywhere__mockup paddingTopBottom" />
             </div>
             <div className="wrapper wrapper--fluid">
               <div className="brands paddingTop--small">
                   <ul className="brands__list d-flex">
-                    <li className="brands__item showDiv">
-                      <img src="/images/brands/fire.png" alt="" className="brands__img" />
-                    </li>
-                    <li className="brands__item showDiv">
-                      <img src="/images/brands/samsung.png" alt="" className="brands__img" />
-                    </li>
-                    <li className="brands__item showDiv">
-                      <img src="/images/brands/philips.png" alt="" className="brands__img" />
-                    </li>
-                    <li className="brands__item showDiv">
-                      <img src="/images/brands/lg.png" alt="" className="brands__img" />
-                    </li>
-                    <li className="brands__item showDiv">
-                      <img src="/images/brands/vizio.png" alt="" className="brands__img" />
-                    </li>
-                    <li className="brands__item showDiv">
-                      <img src="/images/brands/tcl.png" alt="" className="brands__img" />
-                    </li>
-                    <li className="brands__item showDiv">
-                      <img src="/images/brands/apple-tv.png" alt="" className="brands__img" />
-                    </li>
-                    <li className="brands__item showDiv">
-                      <img src="/images/brands/roku.png" alt="" className="brands__img" />
-                    </li>
-                    <li className="brands__item showDiv">
-                      <img src="/images/brands/appstore.png" alt="" className="brands__img" />
-                    </li>
-                    <li className="brands__item showDiv">
-                      <img src="/images/brands/playstore.png" alt="" className="brands__img" />
-                    </li>
-                    <li className="brands__item showDiv">
-                      <img src="/images/brands/web.png" alt="" className="brands__img" />
-                    </li>
+                    {data.brands.nodes.map(image => (
+                      <li className="brands__item">
+                        <Img fluid={image.childImageSharp.fluid} alt="" className="brands__img" />
+                      </li>
+                    ))}
                   </ul>
                 </div>
             </div>
@@ -307,6 +280,7 @@ export default function Home({ data }) {
 
 export const query = graphql`
 query Images {
+
   hero: file(relativePath: {eq: "hero.jpg"}) {
     childImageSharp {
       fluid(maxWidth: 2000,quality: 100) {
@@ -325,5 +299,25 @@ query Images {
       }
     }
   }
+
+  mockup: file(relativePath: {eq: "mockup.jpg"}) {
+    childImageSharp {
+      fluid(maxWidth: 2000,quality: 90) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+  
+  brands: allFile(filter: {relativeDirectory: {eq: "brands"}}) {
+    nodes {
+      id
+      childImageSharp {
+        fluid(maxWidth: 220, quality: 100, webpQuality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+
 }
 `
